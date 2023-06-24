@@ -4,7 +4,6 @@ RegisterNetEvent("ND_npwd:refresh", function()
     local src = source
     exports["npwd"]:unloadPlayer(src)
     local player = NDCore.Functions.GetPlayer(src)
-    local license = NDCore.Functions.GetPlayerIdentifierFromType("license", src)
     local phoneNumber = player.phoneNumber
     if not phoneNumber then
         phoneNumber = exports.npwd:generatePhoneNumber()
@@ -12,7 +11,7 @@ RegisterNetEvent("ND_npwd:refresh", function()
     end
     exports["npwd"]:newPlayer({
         source = src,
-        identifier = license,
+        identifier = player.id,
         firstname = player.firstName,
         lastname = player.lastName,
         phoneNumber = phoneNumber
