@@ -27,7 +27,7 @@
     "useIdentifierPrefix": true,
     "playerTable": "nd_characters",
     "identifierColumn": "identifier",
-    "identifierType": "identifier",
+    "identifierType": "license",
     "profileQueries": true,
     "phoneNumberColumn": "phone_number"
   },
