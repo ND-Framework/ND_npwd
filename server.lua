@@ -3,7 +3,7 @@ RegisterNetEvent("ND_npwd:refresh", function()
     local player = NDCore.getPlayer(source)
     exports["npwd"]:unloadPlayer(src)
     local license = player.identifiers.license
-    local phoneNumber = player.phoneNumber
+    local phoneNumber = player.getMetadata("phonenumber")
     if not phoneNumber then
         phonenumber = exports.npwd:generatePhoneNumber()
         player.setMetadata("phonenumber", phonenumber)
