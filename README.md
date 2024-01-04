@@ -14,22 +14,39 @@
     "toggleCommand": "phone",
     "defaultLanguage": "en"
   },
+  "contacts": {
+    "frameworkPay": false,
+    "payResource": "my-core-resource",
+    "payFunction": "myCheckerFunction"
+  },
   "profanityFilter": {
     "enabled": false,
     "badWords": ["esx"]
   },
   "database": {
-    "useIdentifierPrefix": true,
-    "playerTable": "characters",
-    "identifierColumn": "license",
-    "identifierType": "license",
+    "useIdentifierPrefix": false,
+    "playerTable": "nd_characters",
+    "identifierColumn": "identifier",
+    "identifierType": "identifier",
     "profileQueries": true,
     "phoneNumberColumn": "phone_number"
   },
   "debug": {
-    "level": "error",
+    "level": "silly",
     "enabled": true,
     "sentryEnabled": true
+  },
+  "browser": {
+    "homepageUrl": "https://docs.fivemanage.com"
+  },
+  "defaultContacts": [],
+  "disabledApps": [],
+  "apps": [],
+  "voiceMessage": {
+    "enabled": false,
+    "authorizationHeader": "PE-Secret",
+    "url": "",
+    "returnedDataIndexes": ["url"]
   }
 }
 ```
