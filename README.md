@@ -24,7 +24,7 @@
     "badWords": ["esx"]
   },
   "database": {
-    "useIdentifierPrefix": false,
+    "useIdentifierPrefix": true,
     "playerTable": "nd_characters",
     "identifierColumn": "identifier",
     "identifierType": "identifier",
