@@ -1,20 +1,20 @@
-NDCore = exports["ND_Core"]:GetCoreObject()
+local phone = exports.npwd
 
-RegisterNetEvent("ND_npwd:refresh", function()
-    local src = source
-    exports["npwd"]:unloadPlayer(src)
-    local player = NDCore.Functions.GetPlayer(src)
-    local license = NDCore.Functions.GetPlayerIdentifierFromType("license", src)
-    local phoneNumber = player.phoneNumber
-    if not phoneNumber then
-        phoneNumber = exports.npwd:generatePhoneNumber()
-        MySQL.query.await("UPDATE characters SET phone_number = ? WHERE character_id = ?", {phoneNumber, player.id})
-    end
-    exports["npwd"]:newPlayer({
+local function createPhoneNumber(player)
+    local phoneNumber = phone:generatePhoneNumber()
+    player.setMetadata("phonenumber", phoneNumber)
+    return phoneNumber
+end
+
+AddEventHandler("ND:characterLoaded", function(character)
+    local src = character.source
+    phone:unloadPlayer(src)
+
+    phone:newPlayer({
         source = src,
-        identifier = license,
-        firstname = player.firstName,
-        lastname = player.lastName,
-        phoneNumber = phoneNumber
+        identifier = character.id,
+        firstname = player.firstname,
+        lastname = player.lastname,
+        phoneNumber = character.getMetadata("phonenumber") or createPhoneNumber(character)
     })
 end)
