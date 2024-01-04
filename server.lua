@@ -1,17 +1,20 @@
+local phone = exports.npwd
+
+local function createPhoneNumber(player)
+    local phoneNumber = phone:generatePhoneNumber()
+    player.setMetadata("phonenumber", phoneNumber)
+    return phoneNumber
+end
+
 AddEventHandler("ND:characterLoaded", function(character)
-    local src = source
-    exports["npwd"]:unloadPlayer(src)
-    local license = character.identifiers.license
-    local phonenumber = player.getMetadata("phonenumber")
-    if not phonenumber then
-        phonenumber = exports.npwd:generatePhoneNumber()
-        player.setMetadata("phonenumber", phonenumber)
-    end
-    exports["npwd"]:newPlayer({
+    local src = character.source
+    phone:unloadPlayer(src)
+
+    phone:newPlayer({
         source = src,
-        identifier = license,
+        identifier = character.id,
         firstname = player.firstname,
         lastname = player.lastname,
-        phoneNumber = phonenumber
+        phoneNumber = character.getMetadata("phonenumber") or createPhoneNumber(character)
     })
 end)
