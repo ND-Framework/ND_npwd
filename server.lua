@@ -8,7 +8,6 @@ end
 
 AddEventHandler("ND:characterLoaded", function(character)
     local src = character.source
-    phone:unloadPlayer(src)
     MySQL.query.await("UPDATE nd_characters SET phone_number = ? WHERE identifier = ?", {character.getMetadata("phonenumber") or createPhoneNumber(character), character.identifier})
     phone:newPlayer({
         source = src,
