@@ -15,9 +15,9 @@
     "defaultLanguage": "en"
   },
   "contacts": {
-    "frameworkPay": false,
-    "payResource": "my-core-resource",
-    "payFunction": "myCheckerFunction"
+    "frameworkPay": true,
+    "payResource": "ND_npwd",
+    "payFunction": "pay"
   },
   "profanityFilter": {
     "enabled": false,
