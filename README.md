@@ -24,9 +24,9 @@
     "badWords": ["esx"]
   },
   "database": {
-    "useIdentifierPrefix": true,
+    "useIdentifierPrefix": false,
     "playerTable": "nd_characters",
-    "identifierColumn": "identifier",
+    "identifierColumn": "charid",
     "identifierType": "license",
     "profileQueries": true,
     "phoneNumberColumn": "phone_number"
