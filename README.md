@@ -1,4 +1,6 @@
 # ND_npwd
+### server.cfg
+```set npwd:framework standalone```
 
 ### config.json
 ```json
