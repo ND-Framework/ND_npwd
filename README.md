@@ -1,4 +1,6 @@
 # ND_npwd
+### server.cfg
+```set npwd:framework standalone```
 
 ### config.json
 ```json
@@ -14,22 +16,39 @@
     "toggleCommand": "phone",
     "defaultLanguage": "en"
   },
+  "contacts": {
+    "frameworkPay": true,
+    "payResource": "ND_npwd",
+    "payFunction": "pay"
+  },
   "profanityFilter": {
     "enabled": false,
     "badWords": ["esx"]
   },
   "database": {
-    "useIdentifierPrefix": true,
-    "playerTable": "characters",
-    "identifierColumn": "license",
+    "useIdentifierPrefix": false,
+    "playerTable": "nd_characters",
+    "identifierColumn": "identifier",
     "identifierType": "license",
     "profileQueries": true,
-    "phoneNumberColumn": "phone_number"
+    "phoneNumberColumn": "phonenumber"
   },
   "debug": {
-    "level": "error",
+    "level": "silly",
     "enabled": true,
     "sentryEnabled": true
+  },
+  "browser": {
+    "homepageUrl": "https://docs.fivemanage.com"
+  },
+  "defaultContacts": [],
+  "disabledApps": [],
+  "apps": [],
+  "voiceMessage": {
+    "enabled": false,
+    "authorizationHeader": "PE-Secret",
+    "url": "",
+    "returnedDataIndexes": ["url"]
   }
 }
 ```
