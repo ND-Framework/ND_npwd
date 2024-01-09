@@ -26,10 +26,10 @@
   "database": {
     "useIdentifierPrefix": false,
     "playerTable": "nd_characters",
-    "identifierColumn": "charid",
+    "identifierColumn": "identifier",
     "identifierType": "license",
     "profileQueries": true,
-    "phoneNumberColumn": "phone_number"
+    "phoneNumberColumn": "phonenumber"
   },
   "debug": {
     "level": "silly",
