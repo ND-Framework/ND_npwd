@@ -1,4 +1,5 @@
-# ND_npwd
+# Warning:
+This resource is no longer needed, NPWD got an update that makes it work with ND without any changes. View documentation [here](https://ndcore.dev/addons/phone)!
 
 ### config.json
 ```json
